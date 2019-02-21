@@ -1,2 +1,2 @@
 # Go Project
-> [Course Documentation](make.sc/bew2.5)
+> [Course Documentation](https://make.sc/bew2.5)
