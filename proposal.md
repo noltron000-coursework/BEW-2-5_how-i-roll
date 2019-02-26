@@ -6,7 +6,6 @@
 > Some of these would definately be an interesting idea to use for this go project.
 > All of the data below this is quoted text!
 
-
 :slacktank-2019: *PITCH TITLE:* Rightsize Your Rooms :slacktank-2019:
 *Category:* company (app)
 *Team Members:* @allyc @Rowen Hahn
