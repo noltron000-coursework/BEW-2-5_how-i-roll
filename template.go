@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-type pageVariables struct {
+type timeObj struct {
 	Date string
 	Time string
 }
@@ -19,26 +19,33 @@ func main() {
 
 func index(w http.ResponseWriter, r *http.Request) {
 	////////////////////////
-	// r is request.      //
+	// r is request,      //
 	// w is writers       //
 	//  (& response?)     //
-	// ------------------ //
+	// ------TODO:------- //
 	// need more research //
 	// on these meanings. //
 	////////////////////////
 
-	now := time.Now()              // find the time right now
-	HomePageVars := pageVariables{ //store the date and time in a struct
+	// find the time right...now!!
+	now := time.Now()
+
+	// create time object from now
+	indexVars := timeObj{
+		// TODO: why are these set up in this way?
 		Date: now.Format("02-01-2006"),
 		Time: now.Format("15:04:05"),
 	}
 
-	t, err := template.ParseFiles("./html/index.html") //parse the html file homepage.html
-	if err != nil {                                    // if there is an error
-		log.Print("template parsing error: ", err) // log it
+	// parse the html file index.html
+	tmp, err := template.ParseFiles("./html/index.html")
+	if err != nil { // log any errors
+		log.Print("template parsing error: ", err)
 	}
-	err = t.Execute(w, HomePageVars) //execute the template and pass it the HomePageVars struct to fill in the gaps
-	if err != nil {                  // if there is an error
-		log.Print("template executing error: ", err) //log it
+
+	// execute the template and pass it the indexVars struct to fill in the gaps
+	err = tmp.Execute(w, indexVars)
+	if err != nil { // log any errors
+		log.Print("template executing error: ", err)
 	}
 }
