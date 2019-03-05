@@ -6,8 +6,22 @@
 	</head>
 
 	<body>
-		<p>The date today is {{.Date}}</p>
-		<p>And the time is {{.Time}}</p>
+		<h1>This is How I Roll.</h1>
+
+		<form action='/roll' method='POST'>
+			<div>
+				<label for='dice'>Input Dice:</label><br />
+				<input type='text' name='dice' id='dice' />
+				<button type='submit'>Roll Dice</button>
+			</div>
+		</form>
+
+		<output>hello world</output>
+
+		<div>
+			<p>The date today is {{.Date}}</p>
+			<p>And the time is {{.Time}}</p>
+		</div>
 	</body>
 
 </html>
