@@ -43,7 +43,7 @@ func parseDice(dice string) (int, int) {
 	return outNum, outSize
 }
 
-// rollDice inputs two ints & outputs one random int
+// rollDice inputs two ints & outputs one random int.
 func rollDice(diceNum int, diceSize int) int {
 
 	var counter int
@@ -57,7 +57,7 @@ func rollDice(diceNum int, diceSize int) int {
 	return result
 }
 
-// this just runs the earlier two go functions
+// main runs rollDice on parseDice of input.
 func main(dice string) int {
 	return rollDice(parseDice(dice))
 }
