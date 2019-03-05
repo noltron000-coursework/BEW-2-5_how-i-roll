@@ -6,6 +6,15 @@ import (
 )
 
 func helloWorld(w http.ResponseWriter, r *http.Request) {
+	////////////////////////
+	// r is request.      //
+	// w is writers       //
+	//  (& response?)     //
+	// ------------------ //
+	// need more research //
+	// on these meanings. //
+	////////////////////////
+
 	fmt.Fprintf(w, "Hello World")
 }
 
