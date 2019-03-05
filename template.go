@@ -44,7 +44,7 @@ func index(rsw http.ResponseWriter, req *http.Request) {
 	}
 
 	// execute the template and pass it the indexVars struct to fill in the gaps
-	err = tmp.Execute(w, indexVars)
+	err = tmp.Execute(rsw, indexVars)
 	if err != nil { // log any errors
 		log.Print("template executing error: ", err)
 	}
