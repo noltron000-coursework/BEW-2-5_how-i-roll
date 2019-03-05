@@ -1,11 +1,23 @@
 package main
 
 import (
-	"fmt"
+	"html/template"
+	"log"
 	"net/http"
+	"time"
 )
 
-func helloWorld(w http.ResponseWriter, r *http.Request) {
+type pageVariables struct {
+	Date string
+	Time string
+}
+
+func main() {
+	http.HandleFunc("/", index)
+	log.Fatal(http.ListenAndServe(":8080", nil))
+}
+
+func index(w http.ResponseWriter, r *http.Request) {
 	////////////////////////
 	// r is request.      //
 	// w is writers       //
@@ -15,10 +27,18 @@ func helloWorld(w http.ResponseWriter, r *http.Request) {
 	// on these meanings. //
 	////////////////////////
 
-	fmt.Fprintf(w, "Hello World")
-}
+	now := time.Now()              // find the time right now
+	HomePageVars := pageVariables{ //store the date and time in a struct
+		Date: now.Format("02-01-2006"),
+		Time: now.Format("15:04:05"),
+	}
 
-func main() {
-	http.HandleFunc("/", helloWorld)
-	http.ListenAndServe(":8080", nil)
+	t, err := template.ParseFiles("./html/index.html") //parse the html file homepage.html
+	if err != nil {                                    // if there is an error
+		log.Print("template parsing error: ", err) // log it
+	}
+	err = t.Execute(w, HomePageVars) //execute the template and pass it the HomePageVars struct to fill in the gaps
+	if err != nil {                  // if there is an error
+		log.Print("template executing error: ", err) //log it
+	}
 }
