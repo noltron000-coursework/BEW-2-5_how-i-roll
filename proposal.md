@@ -6,7 +6,7 @@ A dice-roller application starts simple in scope, yet many interesting features 
 &mdash; making it surprisingly complex. What's great is that many of these features are small, allowing discrete improvements to be shipped quickly.
 
 ## Market Viability
-There are plenty of apps like this that exist, but none of them are particularly good. Table-top role playing games have been slowly digitized over time, and yet no site has perfected the feel of digital dice yet. Take these website as examples:
+There are plenty of apps like this that exist, but none of them are particularly good. Table-top role playing games have been slowly digitized over time, and yet no site has perfected the feel of digital dice. Take these website as examples:
 
 - [This is the first result](https://www.wizards.com/dnd/dice/dice.htm) for *'dice roller'* in Google Search
 - [This analytics tool](https://anydice.com/) is not open source, nor is it fast.
