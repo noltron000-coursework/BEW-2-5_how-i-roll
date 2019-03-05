@@ -17,10 +17,10 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
-func index(w http.ResponseWriter, r *http.Request) {
+func index(rsw http.ResponseWriter, req *http.Request) {
 	////////////////////////
-	// r is request,      //
-	// w is writers       //
+	// req is request,    //
+	// rsw is writers     //
 	//  (& response?)     //
 	// ------TODO:------- //
 	// need more research //
