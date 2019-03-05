@@ -1,4 +1,4 @@
-# Project Proposal
+# Slack Tank
 
 > This project's direction is still uncertain at the moment.
 > However, it will be a slack bot. I have been given some interesting information:
