@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>How I Roll</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+	</head>
+
+	<body>
+		<h1>This is How I Roll.</h1>
+
+		<form action='/roll' method='POST'>
+			<div>
+				<label for='dice'>Input Dice:</label><br />
+				<input type='text' name='dice' id='dice' />
+				<button type='submit'>Roll Dice</button><br />
+
+				<label for='result'>Result:</label><br />
+				<output for='dice'>hello world</output>
+			</div>
+		</form>
+
+		<div>
+			<p>The date today is {{.Date}}</p>
+			<p>And the time is {{.Time}}</p>
+		</div>
+	</body>
+
+</html>
