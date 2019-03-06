@@ -389,14 +389,14 @@
 		}
 
 		static _makeCallbackHelper(id, pendingCallbacks, go) {
-			return function() {
+			return function () {
 				pendingCallbacks.push({ id: id, args: arguments });
 				go._resolveCallbackPromise();
 			};
 		}
 
 		static _makeEventCallbackHelper(preventDefault, stopPropagation, stopImmediatePropagation, fn) {
-			return function(event) {
+			return function (event) {
 				if (preventDefault) {
 					event.preventDefault();
 				}
