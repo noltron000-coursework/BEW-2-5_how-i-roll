@@ -1,6 +1,6 @@
 const go = new Go();
 WebAssembly
-	.instantiateStreaming(fetch("../wasm/main.wasm"), go.importObject)
+	.instantiateStreaming(fetch("../go/main.wasm"), go.importObject)
 	.then((result) => {
 		go.run(result.instance);
 	});
