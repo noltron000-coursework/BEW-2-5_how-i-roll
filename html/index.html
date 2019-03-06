@@ -4,13 +4,45 @@
 	<head>
 		<meta charset="utf-8">
 		<title>How I Roll</title>
+		<!-- Will link CSS once I have learned how to do so with a go server. -->
 		<!-- <link rel="stylesheet" type="text/css" href="../css/main.css" /> -->
+		<style>
+			html {
+				width: 100%;
+				height: 100%;
+			}
+
+			body {
+				font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+				padding: 0;
+				margin: 0 2em;
+			}
+
+			label {
+				display: block;
+			}
+
+			textarea {
+				font-family: monospace;
+				display: block;
+			}
+
+			output {
+				font-family: monospace;
+			}
+
+			.module {
+				margin-top: 1em;
+				margin-bottom: 1em;
+			}
+
+		</style>
 		<script src="../js/wasm_exec.js"></script>
 		<script src='../js/wasm_base.js'></script>
 	</head>
 
 	<body>
-		<h1>This is How I Roll.</h1>
+		<h1>How I Roll</h1>
 
 		<button onClick="run();" id="runButton" disabled>
 			<h2>Go Run</h2>
@@ -18,12 +50,17 @@
 
 
 		<form action='/roll' method='POST'>
-			<div>
-				<label for='dice'>Input Dice:</label><br />
-				<input type='text' name='dice' id='dice' />
-				<button type='submit'>Roll Dice</button><br />
+			<div class='module'>
+				<label for='dice'>Input Dice:</label>
+				<textarea type='text' name='dice' id='dice'>4d6</textarea>
+			</div>
 
-				<label for='result'>Result:</label><br />
+			<div class='module bar'>
+				<button type='submit'>Roll Dice</button>
+			</div>
+
+			<div class='module'>
+				<label for='result'>Result:</label>
 				<output for='dice'>hello world</output>
 			</div>
 		</form>
