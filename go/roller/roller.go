@@ -1,9 +1,11 @@
-package roller
+package main
 
 import (
 	"fmt"
 	"math/rand"
+	"os"
 	"strconv"
+	"time"
 )
 
 // parseDice input should be a string `XdY`.
@@ -13,16 +15,14 @@ func parseDice(dice string) (int, int) {
 	var diceSize string
 	var passType bool
 
-	fmt.Println("boolean:")
-	fmt.Println(passType)
-
 	for _, char := range dice {
 		if char == 'd' && !passType {
 			passType = true
 		} else if char == 'd' && passType {
-			return 0, 0
+			fmt.Println("ERROR")
 		} else {
 			// check if item is number
+			var found = false
 			for _, num := range "0123456789" {
 				if num == char {
 					if passType {
@@ -30,10 +30,12 @@ func parseDice(dice string) (int, int) {
 					} else {
 						diceNum += string(char)
 					}
+					found = true
 					break
-				} else {
-					return 0, 0
 				}
+			}
+			if !found {
+				fmt.Println("ERROR")
 			}
 		}
 	}
@@ -45,6 +47,7 @@ func parseDice(dice string) (int, int) {
 
 // rollDice inputs two ints & outputs one random int.
 func rollDice(diceNum int, diceSize int) int {
+	rand.Seed(time.Now().UnixNano())
 
 	var counter int
 	var result int
@@ -58,6 +61,10 @@ func rollDice(diceNum int, diceSize int) int {
 }
 
 // main runs rollDice on parseDice of input.
-func main(dice string) int {
-	return rollDice(parseDice(dice))
+func main() {
+	var arg = os.Args[1]
+	if arg != "" {
+		var result = rollDice(parseDice(arg))
+		fmt.Println("you rolled:", result)
+	}
 }
