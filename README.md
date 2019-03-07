@@ -1,4 +1,5 @@
 # Go Project
+[![Go Report Card](https://goreportcard.com/badge/github.com/noltron000/BEW-2-5_how-i-roll)](https://goreportcard.com/report/github.com/noltron000/BEW-2-5_how-i-roll)
 > [Course Documentation](https://make.sc/bew2.5)
 
 This project was made for the backend web course @ [Make School](https://make.sc/), focusing on [GoLang](https://golang.org/).
