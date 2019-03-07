@@ -12,11 +12,14 @@ At the moment, there is little to no functionality. However, one can get a local
 1. fork or clone this repository.
 1. `cd` into project directory within a new terminal instance.
 1. run `go run ./go/main.go` in terminal.
+1. navigate to `localhost:8080` in a browser of your choice.
+
 
 **Dice Roller**<br />
 Unfortunately the dice roller has not been connected to the html yet. However the program itself still works in the command line. Follow the steps above with the following differences:
 - at step 3, replace `./go/main.go` with `./go/roller/roller.go PARAMS`.
 - replace `PARAMS` with a dice amount, such as *1d6* or *8d4* before running.
+- do not follow the rest of the steps.
 
 These steps will at least get you up and running for development implementations.
 
