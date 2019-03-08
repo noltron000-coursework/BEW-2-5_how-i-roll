@@ -12,15 +12,15 @@ Major help came from these sources:
 *1. https://tutorialedge.net/golang/go-webassembly-tutorial/
 *2. https://www.youtube.com/watch?v=_pww3NJuWnk
 *3. https://github.com/fchikwekwe/FaithBot
+*4. https://echo.labstack.com/guide/templates
+*5. https://blog.scottlogic.com/2017/02/28/building-a-web-app-with-go.html
 
 END OF DOCSTRINGS */
 
 import (
 	"fmt"
 	"net/http"
-	"strconv"
 
-	Roller "./roller"
 	"github.com/labstack/echo"
 )
 
@@ -29,18 +29,19 @@ func index(context echo.Context) error {
 	return context.String(http.StatusOK, "Amazingg wooooah")
 }
 
+// roll function will route to `/roll`
 func roll(context echo.Context) error {
-	var dice = context.QueryParam("dice")
-	var roll = strconv.Itoa(Roller.RollDice(dice))
-	return context.String(
-		http.StatusOK,
-		fmt.Sprintf("Your dice: %s\nYour roll: %s",
-			dice,
-			roll))
+	// var dice = context.QueryParam("dice")
+	// var roll = Roller.RollDice(dice)
+	// var textRoll = strconv.Itoa(roll)
+
+	return context.HTML(http.StatusOK, `<h1>amazing</h1>`)
 }
 
 func main() {
 	fmt.Println("WELCOME.")
+
+	// e = echo server; borrowed code (*3)
 	e := echo.New()
 
 	e.GET("/", index)
