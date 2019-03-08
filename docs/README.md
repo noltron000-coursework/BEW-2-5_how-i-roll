@@ -24,7 +24,7 @@ Unfortunately the dice roller has not been connected to the html yet. However th
 These steps will at least get you up and running for development implementations. -->
 
 ## `v0.1` Functionality
-Version 0.1 has been released. [The website is live](https://how-i-roll.herokuapp.com/), and its basic functionality works. However, the site does still break on unchecked errors, for example entering a zero-sided die, or entering broken text. In addition, [docsify](https://noltron000.github.io/BEW-2-5_how-i-roll/) has been implemented, and a [blogpost]() has been written.
+Version 0.1 has been released. The website is live, and its basic functionality works. However, the site does still break on unchecked errors, for example entering a zero-sided die, or entering broken text. In addition, [docsify]() has been implemented, and a [blogpost]() has been written.
 
 ### App Usage
 This app is quite simple. There is a textbox, in which you enter a dice in the notation of `XdY`, or a quantity of `X` dice with `Y` sides each. When you click enter, it simulates their summed rolls randomly.
@@ -36,8 +36,8 @@ If you would like to contribute, please follow these steps:
 1. run `go run ./server.go` in terminal.
 1. navigate to `localhost:8080` in a browser of your choice.
 
-### Special Note about Heroku
-At the moment, this repo has been split to get heroku working properly. This is the main repo, and the sister repo for Heroku is located [here](https://dashboard.heroku.com/apps/how-i-roll). It's used to make the Heroku app behave. For now, it uses Heroku's CLI as opposed to GitHub, so it isn't as accessible. In future versions, this sister app will be moved first to a second repo in github, and then combined with this one.
+### Special Note
+At the moment, this repo has been split to get heroku working properly. This is the main repo, and the sister repo for Heroku is located [here]().
 
 ## Sources
 1. [Wikipedia](https://en.wikipedia.org/wiki/Dice_notation)
