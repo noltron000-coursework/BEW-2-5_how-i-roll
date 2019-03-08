@@ -18,7 +18,9 @@ END OF DOCSTRINGS */
 import (
 	"fmt"
 	"net/http"
+	"strconv"
 
+	Roller "./roller"
 	"github.com/labstack/echo"
 )
 
@@ -27,11 +29,22 @@ func index(context echo.Context) error {
 	return context.String(http.StatusOK, "Amazingg wooooah")
 }
 
+func roll(context echo.Context) error {
+	var dice = context.QueryParam("dice")
+	var roll = strconv.Itoa(Roller.RollDice(dice))
+	return context.String(
+		http.StatusOK,
+		fmt.Sprintf("Your dice: %s\nYour roll: %s",
+			dice,
+			roll))
+}
+
 func main() {
 	fmt.Println("WELCOME.")
 	e := echo.New()
 
 	e.GET("/", index)
+	e.GET("/roll", roll)
 
 	e.Start(":8080")
 }
