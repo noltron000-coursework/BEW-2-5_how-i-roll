@@ -1,9 +1,8 @@
-package main
+package roller
 
 import (
 	"fmt"
 	"math/rand"
-	"os"
 	"strconv"
 	"time"
 )
@@ -45,26 +44,23 @@ func parseDice(dice string) (int, int) {
 	return outNum, outSize
 }
 
-// rollDice inputs two ints & outputs one random int.
-func rollDice(diceNum int, diceSize int) int {
+// randDice inputs two ints & outputs one random int
+func randDice(diceNum int, diceSize int) int {
 	rand.Seed(time.Now().UnixNano())
 
 	var counter int
 	var result int
 
 	for counter < diceNum {
-		var diceRoll = rand.Intn(diceSize)
+		var diceRoll = rand.Intn(diceSize) + 1
 		result += diceRoll
 		counter++
 	}
 	return result
 }
 
-// main runs rollDice on parseDice of input.
-func main() {
-	var arg = os.Args[1]
-	if arg != "" {
-		var result = rollDice(parseDice(arg))
-		fmt.Println("you rolled:", result)
-	}
+// RollDice parses dice string, then computes the roll.
+func RollDice(dice string) int {
+	var result = randDice(parseDice(dice))
+	return result
 }
