@@ -6,6 +6,12 @@ This project was made for the backend web course @ [Make School](https://make.sc
 
 # How I Roll
 This app is "How I Roll". It's a web app that can simulate dice rolls.
+> ***Links for Your Convenience***
+> - [Docsify Readme](https://noltron000.github.io/BEW-2-5_how-i-roll/)
+> - [Live Heroku App](https://how-i-roll.herokuapp.com/)
+> - [Main GitHub Repo](https://github.com/noltron000/BEW-2-5_how-i-roll)
+> - [Sister Heroku Repo](https://dashboard.heroku.com/apps/how-i-roll)
+> - [Medium Article]()
 
 <!-- ## `v0.0` Functionality
 At the moment, there is little to no functionality. However, one can get a local build running by following these steps:
@@ -24,7 +30,7 @@ Unfortunately the dice roller has not been connected to the html yet. However th
 These steps will at least get you up and running for development implementations. -->
 
 ## `v0.1` Functionality
-Version 0.1 has been released. The website is live, and its basic functionality works. However, the site does still break on unchecked errors, for example entering a zero-sided die, or entering broken text. In addition, [docsify]() has been implemented, and a [blogpost]() has been written.
+Version 0.1 has been released. [The website is live](https://how-i-roll.herokuapp.com/), and its basic functionality works. However, the site does still break on unchecked errors, for example entering a zero-sided die, or entering broken text. In addition, [docsify](https://noltron000.github.io/BEW-2-5_how-i-roll/) has been implemented, and a [blogpost]() has been written.
 
 ### App Usage
 This app is quite simple. There is a textbox, in which you enter a dice in the notation of `XdY`, or a quantity of `X` dice with `Y` sides each. When you click enter, it simulates their summed rolls randomly.
@@ -37,7 +43,7 @@ If you would like to contribute, please follow these steps:
 1. navigate to `localhost:8080` in a browser of your choice.
 
 ### Special Note
-At the moment, this repo has been split to get heroku working properly. This is the main repo, and the sister repo for Heroku is located [here]().
+At the moment, this repo has been split to get heroku working properly. This is the main repo, and the sister repo for Heroku is located [here](https://dashboard.heroku.com/apps/how-i-roll).
 
 ## Sources
 1. [Wikipedia](https://en.wikipedia.org/wiki/Dice_notation)
